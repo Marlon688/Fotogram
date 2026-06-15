@@ -1,0 +1,437 @@
+/* figtree-regular - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/figtree-v9-latin_latin-ext-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* figtree-500 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/figtree-v9-latin_latin-ext-500.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* figtree-700 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/figtree-v9-latin_latin-ext-700.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* figtree-800 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./assets/fonts/figtree-v9-latin_latin-ext-800.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/*ROOT & Variablen*/
+:root {
+  --color-background: rgba(6, 23, 30, 1);
+  --color-header: rgba(9, 33, 42, 1);
+  --max-width: 1920px;
+  --padding-horizontal: 140px;
+  --padding-section: 160px;
+  --header-height: 81px;
+  --h1-margin-top: 160px;
+  --footer-height: 180px;
+  --dialog-width: 688px;
+  --dialog-image-height: 375px;
+  --font-family: 'Figtree';
+}
+
+/*Reset & Base*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*Header*/
+body>header {
+  background-color: var(--color-header);
+  max-width: 100%;
+  height: var(--header-height);
+  font-family: var(--font-family);
+  display: flex;
+  align-items: center;
+  padding: 20px var(--padding-horizontal);
+}
+
+/*Navigation*/
+nav ul {
+  list-style-type: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/*Main & Section*/
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0;
+  flex: 1;
+  /* ← füllt den restlichen Platz aus */
+}
+
+section {
+  padding: 0 160px;
+}
+
+h1 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: white;
+  width: 100%;
+  margin: var(--h1-margin-top) 0px 80px;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobile-break {
+  display: none;
+}
+
+/*Footer*/
+footer {
+  background-color: var(--color-background);
+  background-image: url('./assets/img/Subtract.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 514px;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: flex;
+  gap: 8px;
+}
+
+.photo-card {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+/*Photo Grid*/
+#photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+
+.photo-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.photo-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+  outline: 2px solid rgb(107, 193, 225);
+}
+
+dialog::backdrop {
+  cursor: pointer;
+}
+
+/*Dialog*/
+dialog {
+  width: var(--dialog-width);
+  background-color: var(--color-header);
+  color: white;
+  border-radius: 40px;
+  padding: 56px 64px;
+  border: none;
+  margin: auto;
+  font-family: var(--font-family);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.dialog-content {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.dialog-figure {
+  margin: 0;
+  width: 560px;
+  display: flex;
+  justify-content: center;
+}
+
+.dialog-image {
+  width: 560px;
+  height: 375px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.dialog-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.dialog-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog-close-btn:hover img {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.dialog-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  gap: 48px;
+}
+
+.dialog-arrow-btn {
+  background-color: rgb(33, 39, 46);
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-arrow-btn img {
+  width: 22px;
+  height: 19px;
+}
+
+.dialog-arrow-btn:hover {
+  background-color: rgb(55, 37, 40);
+  transition: background-color 0.2s;
+}
+
+button:focus-visible {
+  outline: 2px solid rgb(107, 193, 225);
+}
+
+.dialog-counter {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+
+.dialog-header,
+.dialog-figure,
+.dialog-nav,
+.dialog-close-btn,
+.dialog-arrow-btn {
+  pointer-events: auto;
+}
+
+
+dialog:not([open]) {
+  display: none;
+}
+
+#dialog-inner {
+  pointer-events: none;
+}
+
+#dialog-inner * {
+  pointer-events: auto;
+}
+
+
+@media (max-width: 1030px) {
+
+  section {
+    padding: 0 24px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 100px 0px 60px;
+    font-weight: 800;
+  }
+
+  .photo-card {
+    width: 180px;
+  }
+
+  footer {
+    padding: 0 100px;
+  }
+
+
+
+}
+@media (max-width: 815px) {
+main{
+  padding-bottom: 80px;
+}
+
+
+
+}
+
+@media (max-width: 768px) {
+
+  body>header {
+    justify-content: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .logo img:first-child {
+    width: 32px;
+    height: 31px;
+  }
+
+  .logo img:last-child {
+    width: 130px;
+    height: 27px;
+  }
+
+  dialog {
+    width: 343px;
+    padding: 32px 16px;
+  }
+  .dialog-content {
+    gap: 4px;
+  }
+.dialog-header {
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 30px 16px;
+}
+.dialog-title {
+  align-self: flex-start;
+  order: 2;
+}
+.dialog-close-btn {
+ order: 1;
+}
+
+  .dialog-image {
+  width: 300px;
+  height: 375px;
+ 
+}
+.dialog-figure {
+
+  width: 100%;
+  
+}
+
+}
+
+@media (max-width: 620px) {
+
+  h1 {
+    margin-top: 60px;
+    word-break: break-word;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+
+  footer {
+    padding: 0 24px;
+    border-radius: 48px 48px 0px 0px;
+    width: 100%;
+    height: 100px;
+  }
+
+  .footer-logo img:first-child {
+    width: 29px;
+    height: 23px;
+  }
+
+  .footer-logo img:last-child {
+    width: 65px;
+    height: 24px;
+  }
+  
+}
+
+@media (max-width: 420px) {
+
+h1 {
+    font-size: 2rem;
+}
+.dialog-counter {
+  white-space: nowrap;
+}
+}

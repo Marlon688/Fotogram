@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram - My personal photo album</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/Favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body> <!-- startet JavaScript sobald die Seite geladen ist -->
+
+
+
+    <header>
+        <nav aria-label="Main navigation"> <!--aria-label = diese Navigation heißt so" -->
+            <ul>
+                <li>
+                    <div class="logo">
+                        <img src="./assets/img/Logo.png" alt="Fotogram Logo Icon">
+                        <img src="./assets/img/Fotogram.png" alt="Fotogram Schriftzug">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-container"> <!--Main photo gallery-->
+        <section aria-label="photo gallery">
+            <h1>My personal <br class="mobile-break">photo album</h1>
+            <div id="photo-grid"> <!--JS photo rendering-->
+
+
+            </div>
+        </section>
+
+    </main>
+
+    <dialog id="photo-dialog" aria-label="Photo detail view">
+        <div id="dialog-inner" class="dialog-content">
+            <!--header-->
+            <!--image-->
+            <!--nav-->
+        </div>
+
+    </dialog>
+    <footer>
+        <div class="footer-logo">
+            <img src="./assets/icons/DA-Icon.png" alt="Developer Akademie Icon">
+            <img src="./assets/img/Developer-Akademie.png" alt="Developer Akademie">
+        </div>
+        <img src="./assets/img/copyright.png" alt="© 2023 Developer Akademie GmbH">
+    </footer>
+
+    <script src="./js/gallery.js"></script>
+    <script src="./js/render.js"></script>
+    <script src="./js/dialog.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
